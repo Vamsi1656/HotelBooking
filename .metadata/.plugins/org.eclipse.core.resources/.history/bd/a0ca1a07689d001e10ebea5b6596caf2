@@ -1,0 +1,5 @@
+package com.hotelbookings.exception;
+
+public class InternalServerException extends Exception {
+
+}

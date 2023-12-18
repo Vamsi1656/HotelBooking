@@ -1,0 +1,18 @@
+package com.hotelbookings.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.hotelbookings.model.BookedRoom;
+
+public interface BookingRepository extends JpaRepository<BookedRoom, Long>  {
+
+	void deleteById(Long bookingId);
+
+	List<BookedRoom> findAll();
+
+	List<BookedRoom> findByRoomId();
+
+	
+}

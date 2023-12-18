@@ -1,0 +1,5 @@
+package com.hotelbookings.repository;
+
+public interface RoomRepository {
+
+}

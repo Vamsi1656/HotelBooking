@@ -1,0 +1,13 @@
+package com.hotelbookings.service;
+
+import com.hotelbookings.model.BookedRoom;
+
+public interface IBookingService {
+
+	void cancelBooking(Long bookingId);
+
+	String saveBooking(Long roomId, BookedRoom bookingRequest);
+
+	BookedRoom findByBookingConfirmationCode(String confirmationCode);
+
+}

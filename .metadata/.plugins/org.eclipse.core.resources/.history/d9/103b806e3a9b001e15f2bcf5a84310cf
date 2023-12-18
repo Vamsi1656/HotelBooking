@@ -1,0 +1,19 @@
+package com.hotelbookings.response;
+
+import java.util.List;
+
+public class RoomResponse {
+
+	
+    private Long id;
+	
+	private String roomType;
+	
+	private double roomPrice;
+	
+	private boolean isBooked=false;
+	
+	private String photo;
+	
+	private List<BookingResponse> bookings;
+}

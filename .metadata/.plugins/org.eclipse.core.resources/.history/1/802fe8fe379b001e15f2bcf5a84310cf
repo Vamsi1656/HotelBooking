@@ -1,0 +1,25 @@
+package com.hotelbookings.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Room {
+	
+	private Long id;
+	
+	private String roomType;
+	
+	private double roomPrice;
+	
+	private boolean isBooked=false;
+	
+	private List<BookedRoom> bookings;
+	
+
+	public Room() {
+		 this.bookings=new ArrayList<>();
+	}
+	
+	
+
+}

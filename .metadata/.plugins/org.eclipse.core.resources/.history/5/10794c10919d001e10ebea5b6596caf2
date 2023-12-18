@@ -1,0 +1,7 @@
+package com.hotelbookings.service;
+
+public interface IBookingService {
+
+	void cancelBooking(Long bookingId);
+
+}

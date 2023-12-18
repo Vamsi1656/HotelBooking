@@ -1,0 +1,47 @@
+package com.hotelbookings.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.hotelbookings.model.BookedRoom;
+import com.hotelbookings.repository.BookingRepository;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class BookingService implements IBookingService {
+	
+	private final BookingRepository bookingRepository;
+
+	public List<BookedRoom> getAllBookingsByRoomId(Long roomId) {
+		
+		return null;
+	}
+
+	@Override
+	public void cancelBooking(Long bookingId) {
+		bookingRepository.deleteById(bookingId);
+		
+	}
+
+	@Override
+	public String saveBooking(Long roomId, BookedRoom bookingRequest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public BookedRoom findByBookingConfirmationCode(String confirmationCode) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BookedRoom> getAllBookings() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

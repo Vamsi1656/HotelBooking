@@ -1,0 +1,15 @@
+package com.hotelbookings.repository;
+
+import java.util.List;
+
+import com.hotelbookings.model.BookedRoom;
+
+public interface BookingRepository  {
+
+	void deleteById(Long bookingId);
+
+	List<BookedRoom> findAll();
+
+	List<BookedRoom> findByRoomId();
+
+}
