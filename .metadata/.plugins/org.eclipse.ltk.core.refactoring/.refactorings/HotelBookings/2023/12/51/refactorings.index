@@ -2,3 +2,5 @@
 1702893091883	Rename type 'BookedRoomRepository'
 1702893162055	Rename type 'IBookedRoomService'
 1702893190873	Rename type 'BookingRoomController'
+1703139102164	Delete element
+1703139117795	Move compilation unit

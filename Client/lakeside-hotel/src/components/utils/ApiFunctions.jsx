@@ -4,13 +4,13 @@ export const api = axios.create({
 	baseURL: "http://localhost:2024"
 })
 
-// export const getHeader = () => {
-// 	const token = localStorage.getItem("token")
-// 	return {
-// 		Authorization: `Bearer ${token}`,
-// 		"Content-Type": "application/json"
-// 	}
-// }
+export const getHeader = () => {
+	const token = localStorage.getItem("token")
+	return {
+		Authorization: `Bearer ${token}`,
+		"Content-Type": "application/json"
+	}
+}
 
 /* This function adds a new room room to the database */
 export async function addRoom(photo, roomType, roomPrice) {
@@ -20,7 +20,7 @@ export async function addRoom(photo, roomType, roomPrice) {
 	formData.append("roomPrice", roomPrice)
 
 	const response = await api.post("/rooms/add/new-room", formData,{
-		// headers: getHeader()
+		headers: getHeader()
 	})
 	if (response.status === 201) {
 		return true
@@ -45,33 +45,33 @@ export async function getAllRooms() {
 		return result.data
 	} catch (error) {
 		throw new Error("Error fetching rooms")
-	}   
+	}
 }
 
-// /* This function deletes a room by the Id */
+/* This function deletes a room by the Id */
 export async function deleteRoom(roomId) {
 	try {
 		const result = await api.delete(`/rooms/delete/room/${roomId}`, {
-			// headers: getHeader()
+			headers: getHeader()
 		})
 		return result.data
 	} catch (error) {
 		throw new Error(`Error deleting room ${error.message}`)
 	}
- }
-// /* This function update a room */
-    export async function updateRoom(roomId, roomData) {
+}
+/* This function update a room */
+export async function updateRoom(roomId, roomData) {
 	const formData = new FormData()
 	formData.append("roomType", roomData.roomType)
 	formData.append("roomPrice", roomData.roomPrice)
 	formData.append("photo", roomData.photo)
 	const response = await api.put(`/rooms/update/${roomId}`, formData,{
-		// headers: getHeader()
+		headers: getHeader()
 	})
 	return response
 }
 
-// /* This function gets a room by the id */
+/* This funcction gets a room by the id */
 export async function getRoomById(roomId) {
 	try {
 		const result = await api.get(`/rooms/room/${roomId}`)
@@ -81,7 +81,7 @@ export async function getRoomById(roomId) {
 	}
 }
 
-// /* This function saves a new booking to the databse */
+/* This function saves a new booking to the databse */
 export async function bookRoom(roomId, booking) {
 	try {
 		const response = await api.post(`/bookings/room/${roomId}/booking`, booking)
@@ -95,11 +95,11 @@ export async function bookRoom(roomId, booking) {
 	}
 }
 
-// /* This function gets alll bokings from the database */
+/* This function gets alll bokings from the database */
 export async function getAllBookings() {
 	try {
 		const result = await api.get("/bookings/all-bookings", {
-			// headers: getHeader()
+			headers: getHeader()
 		})
 		return result.data
 	} catch (error) {
@@ -107,7 +107,7 @@ export async function getAllBookings() {
 	}
 }
 
-// /* This function get booking by the confirmation code */
+/* This function get booking by the cnfirmation code */
 export async function getBookingByConfirmationCode(confirmationCode) {
 	try {
 		const result = await api.get(`/bookings/confirmation/${confirmationCode}`)
@@ -121,7 +121,7 @@ export async function getBookingByConfirmationCode(confirmationCode) {
 	}
 }
 
-// /* This is the function to cancel user booking */
+/* This is the function to cancel user booking */
 export async function cancelBooking(bookingId) {
 	try {
 		const result = await api.delete(`/bookings/booking/${bookingId}/delete`)
@@ -131,16 +131,16 @@ export async function cancelBooking(bookingId) {
 	}
 }
 
-// /* This function gets all availavle rooms from the database with a given date and a room type */
-// export async function getAvailableRooms(checkInDate, checkOutDate, roomType) {
-// 	const result = await api.get(
-// 		`rooms/available-rooms?checkInDate=${checkInDate}
-// 		&checkOutDate=${checkOutDate}&roomType=${roomType}`
-// 	)
-// 	return result
-// }
+/* This function gets all availavle rooms from the database with a given date and a room type */
+export async function getAvailableRooms(checkInDate, checkOutDate, roomType) {
+	const result = await api.get(
+		`rooms/available-rooms?checkInDate=${checkInDate}
+		&checkOutDate=${checkOutDate}&roomType=${roomType}`
+	)
+	return result
+}
 
-// /* This function register a new user */
+/* This function register a new user */
 // export async function registerUser(registration) {
 // 	try {
 // 		const response = await api.post("/auth/register-user", registration)
@@ -154,7 +154,7 @@ export async function cancelBooking(bookingId) {
 // 	}
 // }
 
-// /* This function login a registered user */
+/* This function login a registered user */
 // export async function loginUser(login) {
 // 	try {
 // 		const response = await api.post("/auth/login", login)
@@ -169,7 +169,7 @@ export async function cancelBooking(bookingId) {
 // 	}
 // }
 
-// /*  This is function to get the user profile */
+/*  This is function to get the user profile */
 // export async function getUserProfile(userId, token) {
 // 	try {
 // 		const response = await api.get(`users/profile/${userId}`, {
@@ -181,7 +181,7 @@ export async function cancelBooking(bookingId) {
 // 	}
 // }
 
-// /* This isthe function to delete a user */
+/* This isthe function to delete a user */
 // export async function deleteUser(userId) {
 // 	try {
 // 		const response = await api.delete(`/users/delete/${userId}`, {
@@ -193,7 +193,7 @@ export async function cancelBooking(bookingId) {
 // 	}
 // }
 
-// /* This is the function to get a single user */
+/* This is the function to get a single user */
 // export async function getUser(userId, token) {
 // 	try {
 // 		const response = await api.get(`/users/${userId}`, {
@@ -205,7 +205,7 @@ export async function cancelBooking(bookingId) {
 // 	}
 // }
 
-// /* This is the function to get user bookings by the user id */
+/* This is the function to get user bookings by the user id */
 // export async function getBookingsByUserId(userId, token) {
 // 	try {
 // 		const response = await api.get(`/bookings/user/${userId}/bookings`, {

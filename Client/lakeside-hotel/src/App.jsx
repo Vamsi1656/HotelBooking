@@ -5,14 +5,16 @@ import "../node_modules/bootstrap/dist/js/bootstrap.min.js"
 import { BrowserRouter as Router, Routes , Route} from 'react-router-dom'
 import AddRoom from './components/room/AddRoom'
 import ExistingRooms from "./components/room/ExistingRooms"
-import Home from './components/home/Home.jsx'
-import EditRoom from './components/room/EditRoom.jsx'
+import Home from './components/home/Home'
+import EditRoom from './components/room/EditRoom'
 import NavBar from "./components/layout/NavBar"
 import Footer from "./components/layout/Footer"
-import RoomListing from './components/room/RoomListing.jsx'
-import Admin from './components/admin/Admin.jsx'
-import Checkout from './components/bookings/Checkout.jsx'
-import BookingSuccess from './components/bookings/BookingSuccess.jsx'
+import RoomListing from './components/room/RoomListing'
+import Admin from './components/admin/Admin'
+import Checkout from './components/bookings/Checkout'
+import BookingSuccess from './components/bookings/BookingSuccess'
+import Bookings from './components/bookings/Bookings'
+import FindBooking from './components/bookings/FindBooking.jsx'
 
 function App() {
 
@@ -29,9 +31,9 @@ function App() {
           <Route path='/book-room/:roomId' element={<Checkout/>}/>
           <Route path="/browse-all-rooms" element={<RoomListing/>}/>
           <Route path="/admin" element={<Admin/>}/>
-          <Route path="/admin" element={<Admin/>}/>
           <Route path="/booking-success" element={<BookingSuccess/>}/>
-          <Route path="/home" element={<Home/>}/>
+          <Route path="/existing-bookings" element={<Bookings/>}/>
+          <Route path="/find-booking" element={<FindBooking/>}/>
 
         </Routes>
       </Router>

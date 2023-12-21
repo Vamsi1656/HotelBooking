@@ -1,9 +1,9 @@
-// import React, { useContext } from "react"
+import React, { useContext } from "react"
 import MainHeader from "../layout/MainHeader"
 import HotelService from "../common/HotelService"
 import Parallax from "../common/Parallax"
 import RoomCarousel from "../common/RoomCarousel"
-// import RoomSearch from "../common/RoomSearch"
+import RoomSearch from "../common/RoomSearch"
 import { useLocation } from "react-router-dom"
 // import { useAuth } from "../auth/AuthProvider"
 const Home = () => {
@@ -19,12 +19,12 @@ const Home = () => {
 			)}
 			<MainHeader />
 			<div className="container">
-				{/* <RoomSearch /> */}
+				<RoomSearch />	
 				<RoomCarousel />
 				<Parallax />
 				{/* <RoomCarousel /> */}
 				<HotelService />
-				{/* <Parallax />   */}
+				{/* <Parallax /> */}
 				{/* <RoomCarousel /> */}
 			</div>
 		</section>

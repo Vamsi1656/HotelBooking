@@ -1,5 +1,5 @@
 import React from "react"
-import { Container,Row, Col, Card } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 import Header from "./Header"
 import {
 	FaClock,
@@ -14,7 +14,7 @@ import {
 const HotelService = () => {
 	return (
 		<>
-			<Container className="mb-2">
+			<div className="mb-2">
 				<Header title={"Our Services"} />
 
 				<Row className="mt-4">
@@ -89,7 +89,7 @@ const HotelService = () => {
 						</Card>
 					</Col>
 				</Row>
-			</Container>
+			</div>
 			<hr />
 		</>
 	)
