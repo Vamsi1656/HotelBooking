@@ -1,0 +1,10 @@
+package com.hotelbookings.security;
+
+public class HotelSecurityConfig {
+	
+	 @Bean
+	    public PasswordEncoder passwordEncoder() {
+	        return new BCryptPasswordEncoder();
+	    }
+
+}

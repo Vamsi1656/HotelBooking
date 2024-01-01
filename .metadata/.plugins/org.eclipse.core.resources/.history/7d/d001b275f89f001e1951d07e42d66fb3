@@ -1,0 +1,63 @@
+package com.hotelbookings.service;
+
+import java.util.List;
+
+import com.hotelbookings.exception.RoleAlreadyExistException;
+import com.hotelbookings.model.Role;
+import com.hotelbookings.model.User;
+import com.hotelbookings.repository.RoleRepository;
+
+import lombok.AllArgsConstructor;
+
+@AllArgsConstructor
+public class RoleService implements IRoleService {
+	
+	private final RoleRepository roleRepository;
+
+	@Override
+	public List<Role> getRoles() {
+		
+		return roleRepository.findAll();
+	}
+
+	@Override
+	public Role createRole(Role theRole) {
+		String roleName = "ROLE_" + theRole.getName().toUpperCase();
+		Role role = new Role(roleName);
+		if(roleRepository.existsByName(role)) {
+			throw new RoleAlreadyExistException(theRole.getName()+"role already exists");
+		}
+		return roleRepository.save(role);
+	}
+
+	@Override
+	public void deleteRole(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Role findByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User removeUserFromRole(Long UserId, Long RoleID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User assignRoleToUser(Long UserId, Long RoleID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Role removeAllUsersFromRole(Long UserId, Long RoleID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

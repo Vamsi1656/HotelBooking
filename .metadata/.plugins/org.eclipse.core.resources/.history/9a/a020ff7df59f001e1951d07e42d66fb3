@@ -1,0 +1,30 @@
+package com.hotelbookings.controller;
+
+
+import org.springframework.http.ResponseEntity;
+
+import com.hotelbookings.model.User;
+import com.hotelbookings.service.IUserService;
+
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
+public class AuthController {
+	
+	private final IUserService userService;
+	
+	
+	public ResponseEntity<?> registerUser(User user){
+		
+		try {
+			
+			userService.registerUser(user);
+			return ResponseEntity.ok("Registration SuccessFull");
+			
+		}catch() {
+			
+		}
+		
+	}
+
+}

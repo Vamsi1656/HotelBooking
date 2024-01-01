@@ -1,0 +1,5 @@
+package com.hotelbookings.security.user;
+
+public class HotelUserDetails {
+
+}

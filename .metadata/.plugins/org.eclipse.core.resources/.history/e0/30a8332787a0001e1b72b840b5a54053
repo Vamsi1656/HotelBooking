@@ -1,0 +1,15 @@
+package com.hotelbookings.security.jwt;
+
+import org.hibernate.validator.internal.util.logging.LoggerFactory;
+
+import ch.qos.logback.classic.Logger;
+
+public class JwtUtils {
+	
+	private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
+	
+	private String jwtSecret;
+	
+	private int jwtExpirationTime;
+
+}

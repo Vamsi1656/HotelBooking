@@ -5,7 +5,6 @@ import java.util.List;
 import com.hotelbookings.model.BookedRoom;
 
 
-
 public interface IBookingService {
     void cancelBooking(Long bookingId);
 
@@ -15,9 +14,7 @@ public interface IBookingService {
 
     BookedRoom findByBookingConfirmationCode(String confirmationCode);
 
-	List<BookedRoom> getAllBookings();
+    List<BookedRoom> getAllBookings();
 
-//    List<BookedRoom> getAllBookings();
-//
-//    List<BookedRoom> getBookingsByUserEmail(String email);
+    List<BookedRoom> getBookingsByUserEmail(String email);
 }

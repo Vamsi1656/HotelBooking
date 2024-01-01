@@ -1,0 +1,5 @@
+package com.hotelbookings.security;
+
+public class HotelSecurityConfig {
+
+}

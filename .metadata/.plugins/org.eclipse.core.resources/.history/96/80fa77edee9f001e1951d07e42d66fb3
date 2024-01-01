@@ -1,0 +1,45 @@
+package com.hotelbookings.service;
+
+import java.util.List;
+
+import com.hotelbookings.model.User;
+import com.hotelbookings.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
+
+
+@RequiredArgsConstructor
+public class UserService implements IUserService{
+	
+	private final UserRepository userRepository;
+
+	@Override
+	public User registerUser(User user) {
+		if(userRepository.existByEmail(user.getEmail())) {
+			
+			throw new UserAlreadyExistsException(user.getEmail()+ "already Exists");
+		}
+		return null;
+	}
+
+	@Override
+	public List<User> getUsers() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteUser(String email) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public User getUser(String email) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

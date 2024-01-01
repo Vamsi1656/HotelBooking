@@ -1,0 +1,5 @@
+package com.hotelbookings.security.jwt;
+
+public class AuthTokenFilter {
+
+}

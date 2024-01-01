@@ -26,10 +26,10 @@ public class BookingService implements IBookingService {
     }
 
 
-//    @Override
-//    public List<BookedRoom> getBookingsByUserEmail(String email) {
-//        return bookingRepository.findByGuestEmail(email);
-//    }
+    @Override
+    public List<BookedRoom> getBookingsByUserEmail(String email) {
+        return bookingRepository.findByGuestEmail(email);
+    }
 
     @Override
     public void cancelBooking(Long bookingId) {
